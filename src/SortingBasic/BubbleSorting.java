@@ -4,7 +4,7 @@
 //1 ≤ n ≤ 100
 //1 ≤ 원소 값 ≤ 100
 
-package Sorting;
+package SortingBasic;
 import java.util.*;
 
 public class BubbleSorting {
