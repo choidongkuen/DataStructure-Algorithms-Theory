@@ -13,7 +13,7 @@
 1. 버블 정렬
 2. 선택 정렬
 3. 삽입 정렬    
-4. 기수 정렬
+4. 기수 정렬 
 5. 병합 정렬    
 6. 퀵 정렬
 7. 힙 정렬
@@ -124,5 +124,43 @@ function insertion_sort(arr[])
       a[j + 1] = a[j]
       j--
     a[j + 1] = key
+  return arr
+```
+### 4. 기수 정렬(Radix sort)
+
+```
+- 기수 정렬이란?
+
+앞에서 학습했던 세가지 정렬의 시간복잡도는 전부 O(N^2) 라는 공통점이 있습니다. 
+이번에는 조금 특이한 시간복잡도를 가지고 있는 정렬 알고리즘을 설명하도록 하겠습니다.
+기수 정렬은 맨 뒤에 있는 자릿수 부터 해당 자릿수를 기준으로 정렬한 뒤, 
+점점 앞으로 이동하며 각 자리수를 기준으로 정렬하다가 최종적으로 가장 높은 자리수를 기준으로 정렬하는 방법입니다.
+
+```
+<img src = "https://t1.daumcdn.net/cfile/tistory/99792B495A6EDBD631">
+
+```aidl
+- 기수 정렬의 시간복잡도
+
+기수정렬의 시간복잡도는 O(k∗n)으로, 여기서 k는 자릿수를 의미합니다. 
+각각의 데이터에 대해 매 자릿수마다 분류작업을 하기 때문에 분류작업이 k번 반복된다고 볼 수 있어 다음과 같은 시간복잡도가 나오는 것입니다.
+즉, 비교를 하지 않고 정렬하는 방법이기 때문이다.
+
+- 기수 정렬의 수도 코드 🔥️
+
+function radix_sort(arr, k)
+  for pos = k - 1 ... pos >= 0:
+    set arr_new = [10][]
+    for i = 0 ... i < arr.size
+      set digit = posth digit of arr[i]
+      arr_new[digit].append(arr[i])
+
+    set store_arr = []
+    for i = 0 ... i < 10
+      for j = 0 ... j < arr_new[i].size
+        store_arr.append(arr_new[i][j])
+  
+    arr = store_arr
+
   return arr
 ```
