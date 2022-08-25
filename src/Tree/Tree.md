@@ -9,13 +9,7 @@
 이 외에도 추가적인 용어들을 살펴보자.
 ```
 
-
-
-
-
-
-<img src = "https://s3-ap-northeast-2.amazonaws.com/codetreepublic/problems/574/images/1222106e-f600-4a68-b42e-94bf3852d318.png">
-
+<img src = "https://images.edrawsoft.com/kr/articles/edrawmax/org-sample1.png">
 
 ```
 트리 용어 정리 ⭐️
@@ -29,7 +23,7 @@
 높이: 트리에서 깊이가 가장 깊은 노드의 깊이 혹은 1을 더한 값을 의미합니다. 코드트리에서는 앞으로 트리의 높이를 최대 깊이에 1을 더한 값으로 생각하도록 하자.
 리프 노드: 자식을 갖고 있지 않은 노드를 의미한다.
 ```
-![Alt 트리](https://s3-ap-northeast-2.amazonaws.com/codetreepublic/problems/574/images/6960f8d2-6881-46ed-8543-6961a3d57fd1.png)
+![Alt 트리](https://w.namu.la/s/606aecc8b8a27d42129f3e13c6db9a871a4566cd88c123689585256281efb5dde5b35f4e516572f0e5f0e419f0ae2be3aedf7a9c8dbb1756d1bf635a48da67ecebe682923e02e634391a1f145fa7b32c3c2f08379cb865fc726b0fc6ccaa077256b0c7a6d145c06082e00bd2641eaf32)
 
 > Rooted Tree 와 Unrooted Tree의 차이
 
