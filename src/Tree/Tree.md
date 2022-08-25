@@ -9,7 +9,7 @@
 이 외에도 추가적인 용어들을 살펴보자.
 ```
 
-<img src = "https://images.edrawsoft.com/kr/articles/edrawmax/org-sample1.png">
+![](https://velog.velcdn.com/images/choidongkuen/post/66285a7f-3a0d-4b87-a6dd-79a8207d688d/image.png)
 
 ```
 트리 용어 정리 ⭐️
@@ -23,7 +23,7 @@
 높이: 트리에서 깊이가 가장 깊은 노드의 깊이 혹은 1을 더한 값을 의미합니다. 코드트리에서는 앞으로 트리의 높이를 최대 깊이에 1을 더한 값으로 생각하도록 하자.
 리프 노드: 자식을 갖고 있지 않은 노드를 의미한다.
 ```
-<img src = "https://w.namu.la/s/606aecc8b8a27d42129f3e13c6db9a871a4566cd88c123689585256281efb5dde5b35f4e516572f0e5f0e419f0ae2be3aedf7a9c8dbb1756d1bf635a48da67ecebe682923e02e634391a1f145fa7b32c3c2f08379cb865fc726b0fc6ccaa077256b0c7a6d145c06082e00bd2641eaf32" width = "750" height = "400">
+![](https://velog.velcdn.com/images/choidongkuen/post/8e52d848-ebc8-483a-b3c0-bbb4b7a1460e/image.png)
 
 > Rooted Tree 와 Unrooted Tree의 차이
 
@@ -34,7 +34,9 @@
 리프 노드의 정의는 차수가 1인 노드가 된다. Unrooted tree 에서 루트 노드는 사용자가 정의하기 나름이다.
 ```
 
-<img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMsIsT3fO8zH5aYFqgKOa4SES-Hn9nI-JqmQ&usqp=CAU" width = "500" height = "200" >
+
+![](https://velog.velcdn.com/images/choidongkuen/post/c5d3ecc0-8263-4520-a560-72f80aa4a607/image.png)
+
 
 ## 이진 트리(Binary tree) 🌴
 
@@ -50,8 +52,9 @@
 자식의 수가 제한되어 있어서, 구현하기 상대적으로 간편하다는 장점이 있다. 특히, 배열을 사용하면 부모에서 자식으로 이동하는 연산 또한 구현할 수 있기에 다양한 알고리즘에 사용된다.
 
 ```
+![](https://velog.velcdn.com/images/choidongkuen/post/b176595c-d8dd-430a-9d3a-83caad1f4ac9/image.png)
 
-![img.png](img.png)![이진 트리](/Users/gim-wansig/Library/Mobile Documents/com~apple~CloudDocs/Downloads)
+
 
 ```
 이진 트리의 탐색 기법
