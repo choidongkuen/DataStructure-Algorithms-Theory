@@ -9,7 +9,13 @@
 이 외에도 추가적인 용어들을 살펴보자.
 ```
 
+
+
+
+
+
 <img src = "https://s3-ap-northeast-2.amazonaws.com/codetreepublic/problems/574/images/1222106e-f600-4a68-b42e-94bf3852d318.png">
+
 
 ```
 트리 용어 정리 ⭐️
