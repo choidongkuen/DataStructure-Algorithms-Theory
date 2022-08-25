@@ -23,7 +23,7 @@
 높이: 트리에서 깊이가 가장 깊은 노드의 깊이 혹은 1을 더한 값을 의미합니다. 코드트리에서는 앞으로 트리의 높이를 최대 깊이에 1을 더한 값으로 생각하도록 하자.
 리프 노드: 자식을 갖고 있지 않은 노드를 의미한다.
 ```
-![Alt 트리](https://w.namu.la/s/606aecc8b8a27d42129f3e13c6db9a871a4566cd88c123689585256281efb5dde5b35f4e516572f0e5f0e419f0ae2be3aedf7a9c8dbb1756d1bf635a48da67ecebe682923e02e634391a1f145fa7b32c3c2f08379cb865fc726b0fc6ccaa077256b0c7a6d145c06082e00bd2641eaf32)
+<img src = "https://w.namu.la/s/606aecc8b8a27d42129f3e13c6db9a871a4566cd88c123689585256281efb5dde5b35f4e516572f0e5f0e419f0ae2be3aedf7a9c8dbb1756d1bf635a48da67ecebe682923e02e634391a1f145fa7b32c3c2f08379cb865fc726b0fc6ccaa077256b0c7a6d145c06082e00bd2641eaf32" width = "750" height = "400">
 
 > Rooted Tree 와 Unrooted Tree의 차이
 
@@ -34,7 +34,7 @@
 리프 노드의 정의는 차수가 1인 노드가 된다. Unrooted tree 에서 루트 노드는 사용자가 정의하기 나름이다.
 ```
 
-![Alt unrooted tree](https://s3-ap-northeast-2.amazonaws.com/codetreepublic/problems/574/images/7c703592-7794-4fe7-a32c-9e25f73c8de7.png)
+<img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMsIsT3fO8zH5aYFqgKOa4SES-Hn9nI-JqmQ&usqp=CAU" width = "500" height = "200" >
 
 ## 이진 트리(Binary tree) 🌴
 
@@ -51,7 +51,7 @@
 
 ```
 
-![binary tree](https://s3-ap-northeast-2.amazonaws.com/codetreepublic/problems/576/images/2f2527dd-b0d0-42e3-b193-720a344cb8b4.png)
+![img.png](img.png)![이진 트리](/Users/gim-wansig/Library/Mobile Documents/com~apple~CloudDocs/Downloads)
 
 ```
 이진 트리의 탐색 기법
@@ -61,11 +61,9 @@
 어떤식으로 방문하는 순서에 따라 크게 세가지로 나뉜다.
 각각 전위 탐색 (Preorder Traversal), 중위 탐색 (Inorder Traversal), 후위 탐색 (Postorder Traversal) 이다.
 밑에 그림을 보고 각 탐색 기법을 구체적으로 배워보자!
-```
 
-![Search](https://mblogthumb-phinf.pstatic.net/20120331_173/rlakk11_1333202999001hceVs_JPEG/4.jpg?type=w2)
 
-```
+
 1. 전위 탐색
 전위 탐색은 부모 - 왼쪽 자식 - 오른쪽 자식순으로 탐색한다. 이 뜻은 모든 노드에 대해 부모에 먼저 색칠을 진행한 후,
 왼쪽 자식들을 전부 순회하고, 그 이후에 오른쪽 자식들을 방문함을 뜻한다.
