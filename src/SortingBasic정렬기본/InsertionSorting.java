@@ -4,7 +4,7 @@
 //1 ≤ n ≤ 100
 //1 ≤ 원소 값 ≤ 100
 
-package SortingBasic;
+package SortingBasic정렬기본;
 import java.util.*;
 
 public class InsertionSorting {

@@ -4,7 +4,7 @@
 // 1 ≤ n ≤ 100,000
 // 1 ≤ 원소 값 ≤ 100,000
 
-package SortingAdvanced;
+package SortingAdvanced정렬심화;
 
 import java.util.*;
 public class HeapSorting {
