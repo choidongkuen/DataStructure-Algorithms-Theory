@@ -1,4 +1,4 @@
-package Array배열;
+package Array_배열;
 import java.util.*;
 
 

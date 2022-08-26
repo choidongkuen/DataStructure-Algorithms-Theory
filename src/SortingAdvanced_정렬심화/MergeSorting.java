@@ -5,7 +5,7 @@
 //1 ≤ 원소 값 ≤ 100,000
 
 
-package SortingAdvanced정렬심화;
+package SortingAdvanced_정렬심화;
 import java.util.*;
 
 public class MergeSorting {
