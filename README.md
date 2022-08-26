@@ -1,5 +1,5 @@
 # DataStructure-Algorithms-Theory
-# 자료구조와 알고리즘 개념 정리하기
+# 자료구조와 알고리즘 개념 정리하기 📚
 
  ### Steps 🔥
 
