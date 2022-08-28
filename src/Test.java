@@ -1,5 +1,8 @@
 public class Test {
     public static void main(String[] args){
-        System.out.println("Hello");
+        long start = System.currentTimeMillis();
+        long end = System.currentTimeMillis();
+        System.out.println(end);
+        System.out.println(start);
     }
 }
