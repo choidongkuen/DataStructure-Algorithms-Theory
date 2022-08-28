@@ -252,6 +252,54 @@ function heap_sort(arr[], n)
     heapify(arr, i, 1)
 
 ```
+### Stable sort & In-Place sort
+```
+- Stable sort(안정 정렬) 이란?
+
+간단히 이야기 하자면, 중복된 원소의 원래 순서를 유지하면서 정렬하는 알고리즘이다. 
+임이의 배열 Arr 에 동일한 원소값 x,y 가 있다고 가정해보자. x의 인덱스는 '3'이고, y의 인덱스는 '7'이다.
+Arr 을 오름차순으로 정렬하고자 한다. 정렬 한 후에도, x가 y보다 앞에 위치한다는 것이 보장된다면 stable sort에 해당되며,
+보장되지 않는다면 unstable sort이다.
+```
+
+```
+'선택 정렬'은 최솟값부터 최댓값까지 하나 하나 찾아 해당 위치에 배치를 하는 알고리즘인데,
+값을 단순히 교환하다보니 앞에 있는 값이 갑자기 맨 뒤로 이동할 수 있다.
+밑에 있는 그림을 보면 동일한 원소 3의 순서가 바뀌었다. 따라서 unstable sort이다.
+```
+
+![](https://velog.velcdn.com/images/choidongkuen/post/befe9a95-835f-45fb-8533-7a2bd2a41e39/image.png)
+```
+'퀵 정렬' 핵심 아이디어는 피벗이라는 것을 모두 알 것이다.
+동일한 두 값이 존재하는데, 하나의 값이 피벗으로 지정된다면 순서가 뒤집혀질 수 있다.
+밑에 있는 그림을 보면 pivot 선택 과정에서 동일한 원소 2의 순서가 바뀌었다. 따라서 unstable sort이다.
+```
+
+
+![](https://velog.velcdn.com/images/choidongkuen/post/0ef14c50-3eb8-4f03-900d-fd1f05fd063c/image.png)
+
+![](https://velog.velcdn.com/images/choidongkuen/post/abe25fda-0b0d-4d40-87d6-c03ff0248186/image.png)
+
+```
+- In-Place sort 이란?
+
+정렬 과정에서 추가적인 메모리(저장 공간)가 필요치 않는 정렬 알고리즘이다.
+즉 정렬을 위해 특정 메모리를 사용해야 한다면, In-Place sort에 해당되지 않는다.
+
+'병합 정렬' 은 정렬된 두 배열을 합치기 위해 새로운 배열이 꼭 필요하기 때문에 In-Place Sort라고 할 수 없다.
+
+'기수 정렬' 은 0~9의 자릿수를 가지는 원소를 각각 저장하기 위해 추가적인 2차원 배열이 필요함으로, In-Place Sort라고 할 수 없다.
+```
+
+```정렬 알고리즘 정리 🥸
+1. 버블 정렬 : Stable sort & In-Place sort o
+2. 선택 정렬 : Unstable sort & In-Place sort o
+3. 삽입 정렬 : Stable sort & In-Place sort o
+4. 기수 정렬 : Stable sort & In-Place sort x
+5. 병합 정렬 : Stable sort & In-Place sort x
+6. 퀵 정렬 : Unstable sort & In-Place sort o
+7. 힙 정렬 : Unstable sort & In-Place sort o
+```
 
 
 
