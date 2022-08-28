@@ -34,6 +34,5 @@
 따라서 중간 데이터 접근 및 처리에 굉장히 제한적이였던 스택에 엄청난 장점이 생긴다. 그러나 배열은 정적이기에, 만약 고정된 크기보다 스택에 들어가는
 값이 더 많다면 문제가 발생할 수 있다.
 ```
-![](../../../../../../../var/folders/ks/1d9sd_w5627d7x1x7_xjw9j00000gp/T/TemporaryItems/NSIRD_screencaptureui_jUSTs3/스크린샷 2022-08-29 오전 1.29.33.png)
-
+![](https://velog.velcdn.com/images/choidongkuen/post/9dfa889e-30b6-4590-bf7b-9f411ac043fc/image.png)
 
