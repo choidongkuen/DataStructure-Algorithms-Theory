@@ -3,10 +3,10 @@ import java.util.*;
 
 
 public class ArrayBasic {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         String str = "Hapxy";
         LinkedList<Character> ll = new LinkedList<>();
-        for (int i = 0; i < str.length() ; i++) {
+        for (int i = 0; i < str.length(); i++) {
             ll.add(str.charAt(i));
         }
         ListIterator<Character> it = ll.listIterator();
@@ -19,11 +19,9 @@ public class ArrayBasic {
         it.remove();
 
         it = ll.listIterator();
-        while(it.hasNext())
-            System.out.println(it.next()+" ");
-
-
-
+        while (it.hasNext())
+            System.out.println(it.next() + " ");
 
     }
 }
+
