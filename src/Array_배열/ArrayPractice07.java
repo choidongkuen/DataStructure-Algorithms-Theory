@@ -10,6 +10,11 @@
 // arr : 5,3,1,4,6,1
 // 결과 : 1,1,3,4,5,6
 
+
+// 추가적으로 주어진 배열을 배웠던 정렬방식(버블,선택,삽입,병합,힙,퀵 정렬)로 구현해보기
+// Stable : 버블 삽입 기수 병합 vs Unstable : 선택 힙 퀵
+// In - place : 기수, 병합
+
 package Array_배열;
 
 import java.util.Arrays;
@@ -192,8 +197,17 @@ public class ArrayPractice07 {
         System.out.println();
 
         int[] arrDup7 = arr.clone();
-        System.out.println("== 힙 정렬 ==");
-        heapSort(arrDup7);
-        printElements(arrDup7);
+        int[] newArr = new int[arr.length + 1];
+        for (int i = 0; i < arr.length ; i++) {
+            newArr[i + 1] = arrDup7[i];
+        }
+        System.out.println("== 힙 정렬 =="); // 힙정렬은 1번인덱스 부터 작동하도록 설계
+        heapSort(newArr);
+        for (int i = 1; i < n + 1; i++) {
+            System.out.print(newArr[i] + " ");
+        }
+
+        //System.out.println(Arrays.toString(arr));
+        //System.out.println(Arrays.toString(newArr));
     }
 }
