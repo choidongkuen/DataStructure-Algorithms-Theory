@@ -6,7 +6,7 @@
 // arr : 3,1,2,6,2,2,5,1,9,10,1,11
 // 결과 : 3,6,5,10,11
 
-package Array_배열;
+package Array_List_배열_리스트.Array_배열.Array;
 
 import java.util.Scanner;
 

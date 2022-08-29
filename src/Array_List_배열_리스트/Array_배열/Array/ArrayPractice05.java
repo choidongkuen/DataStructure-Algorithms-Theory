@@ -8,7 +8,7 @@
 
 // stack 을 이용하자
 
-package Array_배열;
+package Array_List_배열_리스트.Array_배열.Array;
 
 import java.util.Scanner;
 import java.util.Stack;

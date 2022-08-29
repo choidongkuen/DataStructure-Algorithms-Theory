@@ -7,9 +7,8 @@
 // 이중 루프 ?
 // 배열에 기록 ?
 
-package Array_배열;
+package Array_List_배열_리스트.Array_배열.Array;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class ArrayPractice08 {

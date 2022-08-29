@@ -8,9 +8,8 @@
 // 홀수 평균 : 5.0
 // 원소의 최대 크기 : 100
 
-package Array_배열;
+package Array_List_배열_리스트.Array_배열.Array;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class ArrayPractice03 {

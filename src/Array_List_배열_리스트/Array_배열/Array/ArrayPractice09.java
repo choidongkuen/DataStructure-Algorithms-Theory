@@ -13,9 +13,8 @@
 // 13 8 3
 // 14 9 4
 // 15 10 5
-package Array_배열;
+package Array_List_배열_리스트.Array_배열.Array;
 
-import java.util.Arrays;
 import java.util.Scanner;
 public class ArrayPractice09 {
     public static void main(String[] args){
