@@ -2,7 +2,7 @@
 // 문자가 주어지면 괄호 쌍이 맞는지 체크하는 프로그램을 작성하라.
 
 
-package Stack_스택;
+package Stack_스택.StackProblems;
 
 import java.util.Scanner;
 import java.util.Stack;

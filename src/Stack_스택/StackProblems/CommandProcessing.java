@@ -8,7 +8,7 @@
 // empty: 스택이 비어있으면 1, 아니면 0을 출력합니다.
 // top: 스택의 가장 위에 있는 정수를 출력합니다.
 
-package Stack_스택;
+package Stack_스택.StackProblems;
 import java.util.*;
 
 public class CommandProcessing {

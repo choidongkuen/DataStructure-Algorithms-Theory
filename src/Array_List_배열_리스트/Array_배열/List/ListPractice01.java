@@ -1,5 +1,5 @@
 // 단순 연결 리스트(simple ver.) 기본 구조 구현 해보기
-// head = 맨 앞 원소 , tail = 맨 뒤 원소
+
 
 package Array_List_배열_리스트.Array_배열.List;
 
@@ -8,7 +8,7 @@ import java.util.LinkedList;
 class Node{
     int data;
     Node next;
-    Node(){}
+    //Node(){}; // default 생성자
     Node(int data, Node next){
         this.data = data;
         this.next = next;
@@ -16,7 +16,7 @@ class Node{
 }
 class LinkedList1{
     Node head; // head 노드
-    LinkedList1(){};
+    LinkedList1(){}; // default 생성자
     LinkedList1(Node node){
         this.head = node;
     }
