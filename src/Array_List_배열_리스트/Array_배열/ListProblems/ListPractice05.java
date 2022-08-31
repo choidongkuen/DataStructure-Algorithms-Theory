@@ -14,34 +14,33 @@
 package Array_List_배열_리스트.Array_배열.ListProblems;
 import java.util.Scanner;
 
-
-
 public class ListPractice05 {
     public static int n;
-    public static boolean checkPalindrome(LinkedList list){
+    public static boolean checkPalindrome(LinkedList list) {
         Node cur = list.head;
         Node left = list.head;
         Node right = null;
 
-        while(cur != null){
+        int cnt = 0;
+        while (cur != null) {
+            cnt++;
             right = cur;
             cur = cur.next;
         }
-        Node preRight = right; // right 객체의 주소를 preRight가 가리킨다. 따라서 실시간 값이 변하면 preRight 값도 변함
-                               // 원래 자바는 call by value 이지만 reference type 은 value == 객체의 주소이므로, 똑같은 주소를 가리키게 된다.
 
-        for (int i = 0; i < n / 2; i++) {
-            if(left.data != right.data){
+        Node prevRight = right;
+        for (int i = 0; i < cnt / 2; i++) {
+            if (left.data != right.data) {
                 return false;
-            } // 다른 경우
+            }
 
-            left = left.next; // 한 칸 이동
+            left = left.next;
             right = left;
-            while(right.next != preRight){ // !!!!!
+            while (right.next != prevRight) {
                 right = right.next;
             }
-            //preRight = right;
         }
+
         return true;
     }
     public static void main(String[] args){
@@ -60,3 +59,4 @@ public class ListPractice05 {
             System.out.println("false");
     }
 }
+
