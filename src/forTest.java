@@ -1,4 +1,8 @@
 // 인덱스 : 시간 , 원소 : 이동 거리
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.nio.Buffer;
 import java.util.*;
 
 public class forTest {
@@ -6,11 +10,13 @@ public class forTest {
     public static int[] arrA = new int[MAX + 1];
     public static int[] arrB = new int[MAX + 1];
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         // Your Program Goes Here
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt(); // arrA의 명령어 개수
         int m = sc.nextInt(); // arrB의 명령어 개수
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String s = br.readLine();
 
         int aInd = 1;
         for(int i = 0; i < n; i++){

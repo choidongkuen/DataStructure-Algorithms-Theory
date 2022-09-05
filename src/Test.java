@@ -1,14 +1,18 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.Arrays;
 
 public class Test {
-    public static void func(int[] arr){
-        for (int i = 0; i < arr.length ; i++) {
-            arr[i] += 100;
-        }
-    }
-    public static void main(String[] args){
-       int[] arr = {1,2,3,4};
-       func(arr);
-        System.out.println(Arrays.toString(arr));
+    public static void main(String[] args) throws Exception {
+
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int s = Integer.parseInt(br.readLine());
+        String s2 = br.readLine();
+        int N = Integer.parseInt(br.readLine());
+
+        System.out.println(s);
+        System.out.println(s2);
+
     }
 }
