@@ -13,5 +13,42 @@
 간선(edge): 두 노드를 연결하는 선을 의미합니다. 에지라고 부르기도 한다.
 
 -> 그래프는 트리와 달리 부모 - 자식 관계를 갖지 않으며, 헤드 노드와 리프 노드의 개념이 없다. (그래프를 처음 접한다면 그래프와 트리의 각 개념과 차이점부터 익히자 🔥)
+```
+
+![](https://velog.velcdn.com/images/choidongkuen/post/b2223d4c-6bae-43c7-abe0-c277c06d848e/image.png)
 
 ```
+그래프의 범주는 크기 때문에, 많은 종류가 있다. 카테고리로는 1️⃣ 방향에 따라 방향/무방향,   2️⃣ 순환 유무에 따라 순환/비순환,  3️⃣ 연결 유무에 따라 연결/비연결 그래프로 나눌 수 있다.
+```
+
+![](https://velog.velcdn.com/images/choidongkuen/post/e9425a46-0403-4d1c-b0c9-4c7c58e7b43a/image.png)
+
+
+![](https://velog.velcdn.com/images/choidongkuen/post/db807028-90e8-47db-be10-bd8c8c55d581/image.png)
+
+
+
+![](https://velog.velcdn.com/images/choidongkuen/post/493b3507-b98b-44cb-b8b3-18387893c1a1/image.png)
+
+```
+그래프 구현하지 ✏️
+
+그렇다면 주어진 그래프를 어떻게 사용하기 편하게 바꿀 수 있을까?
+대표적으로 2가지 방식이 있다. 
+
+1. 인접행렬(Adjacent Matrix)
+
+인접 행렬은 ∣V∣×∣V∣ 크기의 2차원 배열을 만들어서 연결 관계를 표현하는 것 이다. 즉, A → B 로 가는 길이 있다면 배열의 값을 1로, 가는 길이 없다면 배열의 값을 0으로 지정하는 것이다.
+
+
+주요 연산의 시간복잡도와 공간복잡도는 다음과 같습니다. ⏰
+
+특정 정점 I, J 가 연결되어 있는지를 확인: O(1)
+특정 정점과 연결되어 있는 모든 정점을 확인: O(∣V∣)
+공간 복잡도: O(∣V∣∗∣V∣)
+
+밑에 제시된 이미지는 인접행렬을 이미지화 한것이다.
+
+```
+
+![](https://velog.velcdn.com/images/choidongkuen/post/5be70308-c0e2-4440-8b90-4b47bad442d4/image.png)
