@@ -52,3 +52,49 @@ public class Graph04_BFS_Imp {
         BFS(); // BFS 메소드 호출
     }
 }
+/* - 연습 -
+
+public class Graph04_BFS_Imp{
+    public static final int VERTEX = 7;
+    public static final int EDGE = 6;
+
+    public static ArrayList<Integer>[] adList = new ArrayList[VERTEX + 1]; // 인접리스트
+    public static boolean[] visited = new boolean[VERTEX + 1];
+    public static Queue<Integer> q = new LinkedList<>();
+
+    public static void BFS(){
+        while(!q.isEmpty()){
+            int currV = q.poll();
+            for(int i = 0; i < adList[currV].size(); i++){
+                int nextV = adList[currV].get(i);
+
+                if(!visited[nextV]) {
+                    visited[nextV] = true;
+                    q.add(nextV);
+                }
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+
+        for(int i = 1; i <= VERTEX; i++)
+            adList[i] = new ArrayList<>();
+
+        int[] startPoints = {1,1,1,2,4,6};
+        int[] endPoints = {2,3,4,5,6,7};
+
+        for(int i = 0 ; i < EDGE; i++){
+            int start = startPoints[i];
+            int end = endPoints[i];
+
+            adList[start].add(end);
+            adList[end].add(start);
+        }
+        int rootVertex = 1;
+        visited[rootVertex] = true;
+        q.add(rootVertex);
+        BFS();
+    }
+}
+*/
