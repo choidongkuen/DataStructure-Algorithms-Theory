@@ -37,3 +37,39 @@ public class Graph01_DFS_Imp {
         DFS(rootVertex); // DFS 메소드 호출
     }
 }
+
+
+/* - 연습 -
+public class Graph01_DFS_Imp{
+    public static final int VERTEX_NUM = 7;
+    public static final int EDGE_NUM = 6;
+    public static int[][] graph = new int[VERTEX_NUM + 1][VERTEX_NUM + 1]; // 인접행렬
+    public static boolean[] visited = new boolean[VERTEX_NUM + 1]; // 방문 기록용 배열
+    public static void DFS(int vertex){
+
+        for(int currV = 1; currV <= VERTEX_NUM; currV ++){
+            if(graph[vertex][currV] == 1 && !visited[currV]){
+                visited[currV] = true;
+                DFS(currV); // 재귀적 호출
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] startPoints = {1,1,1,2,4,6};
+        int[] endPoints  = {2,3,4,5,6,7};
+
+        for(int i = 0 ; i < EDGE_NUM; i++){
+            int start = startPoints[i];
+            int end = endPoints[i];
+
+            graph[start][end] = 1;
+            graph[end][start] = 1; // 인접행렬 기록
+        }
+        int rootVertex = 1;
+        visited[rootVertex] = true; // 방문 기록
+
+        DFS(rootVertex); // DFS 메소드 호출
+    }
+}
+*/
