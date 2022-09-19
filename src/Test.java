@@ -2,6 +2,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Queue;
 import java.util.Scanner;
 
 public class Test {
@@ -9,7 +10,7 @@ public class Test {
     public static int[] arr;
     public static int[] mergedArr = new int[100];
     public static ArrayList<Integer>[] list = new ArrayList[100];
-
+//    public static Queue<Integer> queue//
     public static void printArr(){
 
         for(int i = 0; i < n; i++)
