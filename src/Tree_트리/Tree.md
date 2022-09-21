@@ -146,6 +146,7 @@ function postorder(n)
 >  탐색 연산의 과정
 >  
 > ⭐️ 루트 노드에서 시작하여 찾고자 하는 값 x와 일치하기 전까지 계속 이동하면 된다. 이때 이진탐색트리의 특성을 잘 활용하면된다.<br>
+> 
 > ⭐️ 만약 현재 노드에 적혀있는 값이 x보다 크다면, x는 현재노드 기준 왼쪽 서브트리에 있을 것임으로, node.left 로 이동하고, 현재 노드에 적혀있는 값이 찾으려고 하는 값보다 작다면 x는 현재 노드의 오른쪽에 있다는 뜻이므로, node.right 로 이동하면 된다.
 >
 > 
@@ -169,17 +170,21 @@ function bst.search(x)
 
  ### 2. 이진탐색트리의 삽입 연산
 
-
+> 삽입 연산의 과정
+> 
 > ⭐️ 삽입연산은 탐색과정과 거의 비슷하다. 삽입 연산은 항상 리프노드에서 이루어지며(중간에서 삽입하면 이진탐색트리의 속성이 깨질 수 있음), 이미 존재하는 이진탐색트리에 새로운 x 값을 노드화 하여 삽입하는 과정이기에, 
 >      최종적으로 node 가 도달한 null 인 지점에서의 parent 정보를 알아야지만, 삽입이 가능하다. <br>
+> 
 > ⭐️ 만약 null 에 도착했다면 해당 위치에 값을 삽입하면 되는데 그때까지 부모노드를 해당 노드의 전 노드로 설정하여 진행해준다.
 > 
 > ⭐️ 여기까지 완료했다면 세가지 case 를 고려해주면된다.
 >
 >
->     1. case 1 트리에 노드가 전혀 없는 경우 -> 이 경우에는 parent값이 null일 것이며, 이진탐색트리의 root를 node(x)로 설정해준다.
->     2. case 2 parent에 적혀있는 값이 삽입하려는 값 x보다 더 큰 경우 -> 이 경우에는 parent에 왼쪽에 node(x)를 넣어주면 된다.
->     3. case 3 parent에 적혀있는 값이 삽입하려는 값 x보다 더 작은 경우 -> 이 경우에는 parent에 오른쪽에 node(x)를 넣어주면 된다.
+>     case 1 : 트리에 노드가 전혀 없는 경우 -> 이 경우에는 parent값이 null일 것이며, 이진탐색트리의 root를 node(x)로 설정해준다.
+> 
+>     case 2 : parent에 적혀있는 값이 삽입하려는 값 x보다 더 큰 경우 -> 이 경우에는 parent에 왼쪽에 node(x)를 넣어주면 된다.
+> 
+>     case 3 : parent에 적혀있는 값이 삽입하려는 값 x보다 더 작은 경우 -> 이 경우에는 parent에 오른쪽에 node(x)를 넣어주면 된다.
 
 
 > 삽입 연산의 수도 코드
@@ -205,6 +210,63 @@ function bst.insert(x)
 ```
 
 ### 3. 이진탐색트리의 삭제 연산
+
+> 삭제 연산의 과정<br>
+> 
+> 삭제 연산은 비교적 복잡하니 차근차근 따라가 보자.
+> 
+> ⭐️ 가장 먼저 삭제하고자 하는 값을 탐색한다.<br>
+> 
+> ⭐️ 값을 찾았을때, 3가지 case 로 나뉘게 된다.
+> 
+> 
+>      case1 : 값을 찾았을 떄 해당 노드(node)의 왼쪽 노드가 비어있다면, node의 오른쪽 노드를 위로 올려주면 된다.
+> 
+>      case2 : 값을 찾았을 때 해당 노드(node)의 오른쪽 노드가 비어있다면, node의 왼쪽 노드를 위로 올려주면 된다.
+> 
+>      case3 : 값을 찾았을 떄 왼쪽 오른쪽이 전부 채워져 있다면, successor 를 찾아야 한다. 여기서 successor 란 현재 노드를
+>      기준으로 큰 값중에 가장 작은 값을 갖는 노드를 말한다. successor 를 찾았다면, successor를 삭제하려고 하는 노드자리에 
+>      삽입하고, successor의 오른쪽 자식을 해당 자리에서 위로 올려주면 된다. 그러나 만약 successor가 삭제하고자 하는 노드에 오른쪽
+>      자식인 경우, 단순히 node의 오른쪽 노드(successor)를 위로 올려주면 된다.
+
+
+> 삭제 연산의 수도 코드
+
+```
+function bst.search(x)
+    set node = bst.root                     
+    while node != null and node.value != x 
+        if node.value > x                
+            node = node.left           
+        else                               
+            node = node.right           
+    
+    return node            
+
+function bst.minimum(node)                  // node 하위 트리에서 최솟값을 구한다.
+    while node.left != null                 // node의 left가 null이 아니면 계속 내려간다.
+        node = node.left
+    return node                             // 최종 node의 위치를 반환한다.
+
+function bst.delete(x)                      // x를 찾아 삭제하는 메소드이다.
+    set node = bst.search(x)                // x 값을 찾는다.
+    
+    if node.left == null                    // Case 1. node의 왼쪽 자식이 비어있다면
+        move(node.right, node)              // 오른쪽 자식을 위로 올려준다.
+    else if node.right == null              // Case 2. node의 오른쪽 자식이 비어있다면
+        move(node.left, node)               // 왼쪽 자식을 위로 올려준다.
+    else                                    // Case 3. 왼쪽 오른쪽 자식이 모두 채워져있다면
+        set succ = bst.minimum(node.right)  // 해당 노드의 successor를 구한다.
+                                            // 이는 현재 노드의 오른쪽 자식에서 시작하여 계속 왼쪽으로 내려가는 것을
+                                            // 반복하면 가능하다.
+        if succ == node.right               // 만약 successor가 현재 노드의 오른쪽 자식이라면 
+            move(node.right, node)          // 오른쪽 자식을 위로 올려준다.
+        else                                // 그렇지 않은 일반적인 경우라면
+            node.value = succ.value         // node의 값을 successor의 값으로 대체시켜준 뒤,
+            move(succ.right, succ)          // successor의 오른쪽 자식을 위로 끌어올려준다.
+
+```
+      
 
 
       
