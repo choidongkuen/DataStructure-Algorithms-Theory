@@ -10,7 +10,8 @@
 이 외에도 추가적인 용어들을 살펴보자.
 ```
 
-![](https://velog.velcdn.com/images/choidongkuen/post/66285a7f-3a0d-4b87-a6dd-79a8207d688d/image.png)
+![](https://velog.velcdn.com/images/choidongkuen/post/61028149-beaa-4ba5-81fd-de0251659f1f/image.png)
+
 
 ```
 트리 용어 정리 ⭐️
@@ -24,19 +25,29 @@
 높이: 트리에서 깊이가 가장 깊은 노드의 깊이 혹은 1을 더한 값을 의미합니다. 코드트리에서는 앞으로 트리의 높이를 최대 깊이에 1을 더한 값으로 생각하도록 하자.
 리프 노드: 자식을 갖고 있지 않은 노드를 의미한다.
 ```
-![](https://velog.velcdn.com/images/choidongkuen/post/8e52d848-ebc8-483a-b3c0-bbb4b7a1460e/image.png)
+![](https://velog.velcdn.com/images/choidongkuen/post/806dac27-73a5-42d4-a95d-dc8a2a85b6fb/image.png)
 
 > Rooted Tree 와 Unrooted Tree의 차이
 
 ```
-놀랍게도 밑에 있는 이미지와 같이 부모 자식 관계가 정의되지 않는 경우에도 트리라고 부릅니다. 
+놀랍게도 밑에 있는 이미지와 같이 '부모 자식 관계'가 정의되지 않는 경우에도 트리라고 부릅니다. 
 즉, 트리의 원래 정의는 노드끼리 전부 연결되어 있으면서 사이클이 존재하지 않는 그래프이다. 이런 경우를 'Unrooted tree'라고 부른다.
 위에서 살펴본 이미지 경우에서 처럼 루트 노드가 설정되어있는 트리는 'Rooted tree'라고 부릅니다. 참고로 Unrooted tree에서의 차수는 노드에 연결된 간선의 개수이고, 
 리프 노드의 정의는 차수가 1인 노드가 된다. Unrooted tree 에서 루트 노드는 사용자가 정의하기 나름이다.
 ```
 
+![](https://velog.velcdn.com/images/choidongkuen/post/e7840a77-45c7-48d2-ab67-985c0df73acc/image.png)
 
-![](https://velog.velcdn.com/images/choidongkuen/post/c5d3ecc0-8263-4520-a560-72f80aa4a607/image.png)
+>여기서 잠깐! 트리에 대한 개념 문제 😎
+> - 트리의 루트는 2개 이상이 될 수 없다?     
+> - 트리의 루트는 특별히 정해진 것이 아니며, 상황에 따라 달라질 수 있다?
+> - 한 도드가 가질 수 있는 자식의 수는 제한이 없으나, 부모 노드는 최대 1개만 존재한다?
+> - 리프 노드는 자식이 절대로 있을 수 없다?
+> 
+> - 노드가 하나만 있다면 그건 트리라고 부를 수 없다?
+> 
+> Ans : true,true,true,true,false
+
 
 
 ## 이진 트리(Binary tree) 🌴
@@ -53,9 +64,8 @@
 자식의 수가 제한되어 있어서, 구현하기 상대적으로 간편하다는 장점이 있다. 특히, 배열을 사용하면 부모에서 자식으로 이동하는 연산 또한 구현할 수 있기에 다양한 알고리즘에 사용된다.
 
 ```
-![](https://velog.velcdn.com/images/choidongkuen/post/b176595c-d8dd-430a-9d3a-83caad1f4ac9/image.png)
 
-
+![](https://velog.velcdn.com/images/choidongkuen/post/15e1e705-300c-4c39-9c00-91b68d172ec4/image.png)
 
 ```
 이진 트리의 탐색 기법
@@ -109,3 +119,92 @@ function postorder(n)
   
 // visit(n) -> n 노드를 방문 기록
 ```
+
+## 이진탐색트리(Binary Search Tree) 🎄
+> - 이진 탐색 트리란 무엇일까? 🤔
+    
+>   - 이진탐색 트리란 이진탐색(BinarySearch)와 연결리스트(LinkedList)를 결합한 자료구조의 일종이다. 즉, 이진탐색의 효율적인 *탐색 능력* 과 효율적인 *삽입
+      /삭제* 를 보장하는 연결리스트의 장점을 활용한 구조이다.
+>   - 이진탐색의 경우 정렬된 상태에서 소요되는 시간 복잡도는 O(log n)으로 빠르지만 삽입/삭제가 불가능하다. 
+>   - 연결리스트의 경우 삽입/삭제에 소요되는 시간 복잡도는 O(1)으로 뻐르지만 탐색이 O(n)이 걸린다.
+
+
+> 이진탐색트리 Img
+![](https://velog.velcdn.com/images/choidongkuen/post/5d741da6-1b0b-4634-b8a5-440fe12f1d45/image.png)
+
+
+> 이진탐색트리의 특성 ⭐️
+> 
+>
+> - 각 노드의 왼쪽 서브트리에는 해당 노드의 값보다 작은 값을 지닌 노드들로 이루어져 있다.
+> - 각 노드의 오른쪽 서브트리에는 해당 노드의 값보다 큰 값을 지닌 노드들로 이루어져 있다.
+> - 중복된 노드는 없어야 한다.
+> - 왼쪽 서브트리, 오른쪽 서브트리 또한 이진탐색트리이다.
+
+
+ ### 1. 이진탐색트리의 탐색 연산
+>  탐색 연산의 과정
+>  
+> ⭐️ 루트 노드에서 시작하여 찾고자 하는 값 x와 일치하기 전까지 계속 이동하면 된다. 이때 이진탐색트리의 특성을 잘 활용하면된다.<br>
+> ⭐️ 만약 현재 노드에 적혀있는 값이 x보다 크다면, x는 현재노드 기준 왼쪽 서브트리에 있을 것임으로, node.left 로 이동하고, 현재 노드에 적혀있는 값이 찾으려고 하는 값보다 작다면 x는 현재 노드의 오른쪽에 있다는 뜻이므로, node.right 로 이동하면 된다.
+>
+> 
+
+
+
+> 탐색 연산의 수도 코드
+
+```
+function bst.search(x)
+    set node = bst.root                     // root에서 시작한다.
+    while node != null and node.value != x  // node에 들어있는 값이 x가 되기 전까지 계속 반복한다.
+        if node.value > x                   // 노드에 있는 값이 x보다 크다면
+            node = node.left                // 왼쪽 자식으로 내려와 탐색을 진행한다.
+        else                                // 노드에 있는 값이 x보다 작다면
+            node = node.right               // 오른쪽 자식으로 내려와 탐색을 진행한다.
+    
+    return node                             // 최종 위치를 반환한다.
+```
+
+
+ ### 2. 이진탐색트리의 삽입 연산
+
+
+> ⭐️ 삽입연산은 탐색과정과 거의 비슷하다. 삽입 연산은 항상 리프노드에서 이루어지며(중간에서 삽입하면 이진탐색트리의 속성이 깨질 수 있음), 이미 존재하는 이진탐색트리에 새로운 x 값을 노드화 하여 삽입하는 과정이기에, 
+>      최종적으로 node 가 도달한 null 인 지점에서의 parent 정보를 알아야지만, 삽입이 가능하다. <br>
+> ⭐️ 만약 null 에 도착했다면 해당 위치에 값을 삽입하면 되는데 그때까지 부모노드를 해당 노드의 전 노드로 설정하여 진행해준다.
+> 
+> ⭐️ 여기까지 완료했다면 세가지 case 를 고려해주면된다.
+>
+>
+>     1. case 1 트리에 노드가 전혀 없는 경우 -> 이 경우에는 parent값이 null일 것이며, 이진탐색트리의 root를 node(x)로 설정해준다.
+>     2. case 2 parent에 적혀있는 값이 삽입하려는 값 x보다 더 큰 경우 -> 이 경우에는 parent에 왼쪽에 node(x)를 넣어주면 된다.
+>     3. case 3 parent에 적혀있는 값이 삽입하려는 값 x보다 더 작은 경우 -> 이 경우에는 parent에 오른쪽에 node(x)를 넣어주면 된다.
+
+
+> 삽입 연산의 수도 코드
+> 
+```
+function bst.insert(x)
+    set node = bst.root         // root에서 시작합니다.
+    set parent = bst.root       // parent도 root로 설정하고 시작합니다.
+
+    while node != null          // node가 null이 되기 전까지 반복합니다.
+      parent = node             // parent는 항상 node가 움직이기 직전의 위치로 갱신해줍니다. 
+      if node.value > x         // node에 적혀있는 값이 x보다 크다면
+          node = node.left      // 왼쪽 자식으로 이동해야 합니다. 
+      else                      // node에 적혀있는 값이 x보다 작다면
+          node = node.right     // 오른쪽 자식으로 이동해야 합니다.
+
+    if parent == null            // Case 1. 비어있는 tree라면
+       bst.root = node(x)       // root를 node(x)로 설정해줍니다.
+    else if parent.value > x     // Case 2. parent에 적혀있는 값이 추가하려는 값 x보다 크다면
+       parent.left = node(x)    // parent의 왼쪽에 node(x)를 넣어줍니다.
+    else                         // Case 3. parent에 적혀있는 값이 추가하려는 값 x보다 작다면
+       parent.right = node(x)   // parent의 오른쪽에 node(x)를 넣어줍니다.
+```
+
+### 3. 이진탐색트리의 삭제 연산
+
+
+      
