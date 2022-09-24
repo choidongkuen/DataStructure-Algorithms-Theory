@@ -1,8 +1,11 @@
 # DataStructure-Algorithms-Theory
 # 자료구조와 알고리즘 개념 정리하기 📚
 
-### Steps 🔥
-> part 1. Data Structure (자료 구조) 👨‍💻
+## Steps 🔥
+
+<br>
+
+#### part 1. Data Structure (자료 구조) 👨‍💻
 
 >   - [Array] :  배열과 연결리스트<br>
 >     <br>
@@ -19,7 +22,7 @@
 <br>
 <br>
 
-> part 2. Algorithms (알고리즘) 🧑🏼‍💻
+#### part 2. Algorithms (알고리즘) 🧑🏼‍💻
 
 
 > - [Basic Sorting] : 버블 정렬, 선택 정렬, 삽입 정렬, 기수 정렬<br>
@@ -43,8 +46,7 @@
 >  <br>
 > 
 > - [Dynamic Programming] : 다이나믹 프로그래밍 <br>
-    <br>
-> 
+>    <br> 
 > - [Graph Algorithms] : Dijkstra, Floyd Warhshall, Kruskal, Prim, etc
 
 
