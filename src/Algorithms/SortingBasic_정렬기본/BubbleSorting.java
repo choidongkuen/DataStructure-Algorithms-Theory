@@ -1,8 +1,10 @@
 // 입력 형식
 // 첫 번째 줄에는 n이 주어집니다.
-//두 번째 줄부터 n개의 원소값이 공백을 사이에 두고 주어집니다.
-//1 ≤ n ≤ 100
-//1 ≤ 원소 값 ≤ 100
+// 두 번째 줄부터 n개의 원소값이 공백을 사이에 두고 주어집니다.
+// 1 ≤ n ≤ 100
+// 1 ≤ 원소 값 ≤ 100
+
+// Stable & In-Place sorting
 
 package Algorithms.SortingBasic_정렬기본;
 import java.util.*;

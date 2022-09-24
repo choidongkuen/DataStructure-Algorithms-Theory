@@ -4,7 +4,9 @@
 // 1 ≤ n ≤ 100,000
 // 1 ≤ 원소 값 ≤ 100,000
 
-package Algorithms.SortingAdvanced_정렬심화;
+// Unstable & In-Place sorting
+
+package Algorithms.SortingAdvanced01_정렬심화01;
 
 import java.util.*;
 public class HeapSorting {
