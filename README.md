@@ -2,12 +2,12 @@
 # 자료구조와 알고리즘 개념 정리하기 📚
 
 ### Steps 🔥
-> part 1. Data Structure (자료 구조)
+> part 1. Data Structure (자료 구조) 👨‍💻
 
 >   - [Array] :  배열과 연결리스트<br>
->   <br>
+>     <br>
 >   - [Stack] : 스택<br>
-      <br>
+>      <br>
 >   - [Queue] : 큐<br>
 >     <br>
 >   - [Deque] : 데크<br>
@@ -19,7 +19,7 @@
 <br>
 <br>
 
-> part 2. Algorithms (알고리즘)
+> part 2. Algorithms (알고리즘) 🧑🏼‍💻
 
 
 > - [Basic Sorting] : 버블 정렬, 선택 정렬, 삽입 정렬, 기수 정렬<br>
