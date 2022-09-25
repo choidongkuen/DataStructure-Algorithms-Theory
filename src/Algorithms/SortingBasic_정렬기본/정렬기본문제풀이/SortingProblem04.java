@@ -8,7 +8,7 @@
 // 입력 : 1,3,1
 // 출력 : 2
 
-package Algorithms.정렬기본문제풀이;
+package Algorithms.SortingBasic_정렬기본.정렬기본문제풀이;
 
 
 class Solution04{

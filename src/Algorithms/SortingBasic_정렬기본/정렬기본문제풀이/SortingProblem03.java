@@ -7,7 +7,7 @@
 // 출력 : [1,6],[8,10],[15,18]
 
 
-package Algorithms.정렬기본문제풀이;
+package Algorithms.SortingBasic_정렬기본.정렬기본문제풀이;
 
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -6,7 +6,7 @@
 // 입력 : 2,0,2,1,1,0
 // 출력 : 0,0,1,1,2,2
 
-package Algorithms.정렬기본문제풀이;
+package Algorithms.SortingBasic_정렬기본.정렬기본문제풀이;
 
 import java.util.ArrayList;
 import java.util.Arrays;

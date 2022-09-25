@@ -5,12 +5,10 @@
 // 입력 : "eat" , "tea" , "tan", "ate" , "nat" , "bat"
 // 출력 : [[eat,tea,ate],[bat],[tan,nat]]
 
-package Algorithms.정렬기본문제풀이;
+package Algorithms.SortingBasic_정렬기본.정렬기본문제풀이;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.Set;
 
 class Solution02{
     public static void sorting(char[] arr){

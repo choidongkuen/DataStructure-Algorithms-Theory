@@ -7,7 +7,7 @@
 package Algorithms.BinarySearch_이진탐색;
 import java.util.Scanner;
 
-public class BinarySearch {
+public class BinarySearch01 {
     public static final int MAX = 1000; // 원소의 최대 개수
     public static int[] arr = new int[MAX]; // 탐색할 배열
     public static int n,target;
