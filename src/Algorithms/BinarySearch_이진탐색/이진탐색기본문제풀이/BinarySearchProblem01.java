@@ -29,6 +29,10 @@ public class BinarySearchProblem01 {
         while (left <= right) {
 
             int mid = (left + right) / 2;
+
+            // 만약 인덱스 right가 너무 크다면 long mid 로 하던가
+            // int mid = left + (right - left) / 2
+
             if (arr[mid] == target)
                 return mid;
             else if (arr[mid] < target) {
@@ -37,7 +41,7 @@ public class BinarySearchProblem01 {
                 right = mid - 1;
             }
         }
-        return -left - 1;
+        return -left - 1; // 이해!
     }
 
     public static void main(String[] args) {
