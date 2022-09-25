@@ -38,6 +38,7 @@ class Solution02{
             // sort
             sorting(charArr);
             String key = String.valueOf(charArr); // key가 되는 정렬된 s 문자열
+            // String key = new String(charArr); //
 
 
             if(!hashMap.containsKey(key)){ // 해시맵에 존재하지 않는 다면

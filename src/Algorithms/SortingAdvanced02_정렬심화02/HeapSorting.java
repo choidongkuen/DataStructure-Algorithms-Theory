@@ -6,7 +6,7 @@
 
 // Unstable & In-Place sorting
 
-package Algorithms.SortingAdvanced01_정렬심화01;
+package Algorithms.SortingAdvanced02_정렬심화02;
 
 import java.util.*;
 public class HeapSorting {

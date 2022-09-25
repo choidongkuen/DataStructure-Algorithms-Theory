@@ -3,7 +3,7 @@
 // 합친 구간은 오름차순 출력
 
 // 입출력 예시
-// 입력 : [2,6],[1,3],[15,10],[8,10]
+// 입력 : [2,6],[1,3],[15,18],[8,10]
 // 출력 : [1,6],[8,10],[15,18]
 
 
@@ -20,7 +20,7 @@ class Solution03{
     }
 
     public static int partition(int[][] arr,int left, int right){
-        int pivot = arr[arr.length - 1][0];
+        int pivot = arr[left][0]; // 맨 왼쪽 값 pivot
         int i = left;
         int j = right;
 
@@ -80,3 +80,4 @@ public class SortingProblem03 {
         System.out.println();
     }
 }
+
