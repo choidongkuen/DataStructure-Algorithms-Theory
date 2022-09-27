@@ -6,6 +6,10 @@
 // list = {{2,3,9}, {1,5,7}, {3,6,7,11}}
 // 순사 : 1 -> 2 -> 3 -> 3 -> 5 -> 6 -> 7 -> 7 -> 9 -> 11
 
+// 아이디어 :
+// 연결리스트를 이용한 문제임으로, 하나의 노드를 구하면 해당된다.
+// 연결되어있기때문에, 헤드에 대한 정보만 필요하다.
+
 package Algorithms.DivideConquer_분할정복.분할정복문제풀이;
 
 
@@ -35,13 +39,13 @@ public class DivideConquerProblem02 {
         int mid = left + (right - left) / 2;
         Node node1 = divide(nodeList,left, mid);
         Node node2 = divide(nodeList,mid + 1,right);
-        Node mergedNode = merge(node1,node2);
+        Node mergedNode = merge(node1,node2); // 두 노드 병합
 
         return mergedNode;
         // 분할 완료
     }
 
-    public static Node merge(Node node1, Node node2){
+    public static Node merge(Node node1, Node node2){ // 두 노드 오름차순으로 정렬하는 메소드
         if(node1 == null)
             return node2;
         if(node2 == null)
@@ -66,7 +70,7 @@ public class DivideConquerProblem02 {
         if(node2 != null)
             curNode.next = node2;
 
-        return head.next;
+        return head.next; // head 다음 노드부터 리턴
 
     }
     public static void setUpLinkedList(Node[] node, int[][] list){
