@@ -1,5 +1,5 @@
 // 인접 행렬을 이용한 그래프 구현
-
+// 인접 행렬에 대한 속성 + 기능을 MyAdjacentMatrix 클래스로 구현
 package DataStructure.Graph_그래프;
 
 import java.util.Arrays;
