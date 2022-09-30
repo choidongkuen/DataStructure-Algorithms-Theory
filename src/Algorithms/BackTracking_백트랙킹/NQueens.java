@@ -3,7 +3,7 @@
 
 package Algorithms.BackTracking_백트랙킹;
 
-public class BackTracking01 {
+public class NQueens {
 
     static int n = 4;
     static int[] board = new int[n]; // 원소는 i번째 행의 퀸이 놓이게 될 열의 번호
