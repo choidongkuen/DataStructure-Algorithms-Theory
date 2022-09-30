@@ -1,4 +1,4 @@
-// 인접행렬을 이용하여 DFS 구현해보기
+// "인접행렬"을 이용하여 DFS 구현해보기
 
 package DataStructure.Graph_그래프;
 

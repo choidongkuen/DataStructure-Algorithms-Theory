@@ -1,4 +1,4 @@
-// 인접리스트로 DFS 구현해보기
+// "인접리스트"로 DFS 구현해보기
 
 package DataStructure.Graph_그래프;
 
