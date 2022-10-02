@@ -2,81 +2,97 @@
 // 1. 우선순위 큐와 인접리스트를 이용 O(ElogV)
 // 2. 일반 큐와 인접행렬을 이용 O(V^2)
 
+// 1번 방식으로 구현해보기
+
 package Algorithms.Dijkstra_다익스트라;
 
-class Edge{
-    int x,y,z;
-
-    public Edge(int x, int y, int z){
-        this.x = x;
-        this.y = y;
-        this.z = z;
-    }
-}
+import java.util.ArrayList;
+import java.util.PriorityQueue;
+import java.util.Scanner;
 
 public class Dij01 {
 
-    public static final int MAX_N = 5; // 정점의 갯수
-    public static int[][] graph = new int[MAX_N + 1][MAX_N + 1]; // 인접행렬
-    public static boolean[] visited = new boolean[MAX_N + 1]; // 방문 기록을 위한 배열
+    public static final int MAX_N = 100;
+    public static final int MAX_M = 100;
+
+    public static int n,m; // 정점의 갯수와 간선의 갯수
+    public static ArrayList<Node>[] graph = new ArrayList[MAX_N + 1];
+    public static PriorityQueue<Element> pq = new PriorityQueue<>();
 
     public static int[] dist = new int[MAX_N + 1];
+    public static Node[] nodes = new Node[MAX_M + 1];
+    static class Node{
+        int index,dist;
 
+        Node(int y, int z){
+            this.index = y;
+            this.dist = z;
+        }
+    }
+    // y 정점으로의 방향으로 z의 가중치를 가진다.
+    static class Element implements Comparable<Element>{
+        int dist, index;
+        public Element(int dist, int index){
+            this.dist = dist;
+            this.index = index;
+        }
+
+        public int compareTo(Element e){
+            return this.dist - e.dist;
+        } // 가까운 거리가 가장 먼저 위치
+    }
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        n = sc.nextInt();
+        m = sc.nextInt();
 
-        int n = 5, m = 8;
-        // 정점의 수 : 5, 간선의 수 : 8
-        // x - > y (z : 가중치)
-        Edge[] edges = new Edge[]{
-                new Edge(-1, -1, -1),
-                new Edge(2, 1, 3),
-                new Edge(1, 4, 3),
-                new Edge(4, 2, 1),
-                new Edge(5, 2, 4),
-                new Edge(5, 4, 2),
-                new Edge(4, 3, 2),
-                new Edge(3, 4, 1),
-                new Edge(1, 3, 6)
-        };
-
-        for (int i = 1; i <= m; i++) {
-            int x = edges[i].x;
-            int y = edges[i].y;
-            int z = edges[i].z;
-
-            graph[x][y] = z;
+        for (int i = 1; i <= m ; i++) {
+            graph[i] = new ArrayList<>();
         }
-        for (int i = 1; i <= n; i++) {
-            dist[i] = (int) 1e9; // 무한대로 설정
-        }
-        dist[5] = 0; // 시작위치 : 5
 
-        for (int i = 1; i < n; i++) {
+        for (int i = 1; i <= m ; i++) {
+            int x = sc.nextInt();
+            int y = sc.nextInt();
+            int z = sc.nextInt();
 
-            int minIndex = -1; // minIndex = 특정 순간의 dist 값이 최소인 원소의 인덱스
+            graph[x].add(new Node(y,z));
+        } // x - > y 로 z 의 가중치
 
-            for (int j = 1; j <= n; j++) {
-                if (visited[j])
-                    continue;
-                if (minIndex == -1 || dist[minIndex] > dist[j]) {
-                    minIndex = j; // dist 값이 최소인 원소의 인덱스 업데이트
+        for(int i = 1; i <= n; i ++)
+            dist[i] = (int)1e9;
+
+        dist[5] = 0;
+        // 시작위치에는 dist값을 0으로 설정
+
+        pq.add(new Element(0,5));
+        // 시작위치를 우선순위 큐에 삽입
+
+        while(!pq.isEmpty()){
+
+            int minDist = pq.peek().dist;
+            int minInd = pq.peek().index;
+
+            pq.poll(); // 가장 거리가 가까운 정점 삭제
+
+            if(minDist != dist[minInd])
+                continue;
+
+            for (int j = 0; j < graph[minInd].size() ; j++) {
+                int targetIndex = graph[minInd].get(j).index;
+                int targetDist = graph[minInd].get(j).dist;
+                // 최솟값에 해당하는 정점에 연결된 간선들을 보며
+                // 최단거리 값을 갱신
+
+                int newDist = dist[minInd] + targetDist;
+                if(dist[targetIndex] > newDist){
+                    dist[targetIndex] = newDist; // 거리 갱신
+                    pq.add(new Element(newDist,targetIndex));
                 }
             }
-
-            visited[minIndex] = true; // 방문 기록
-
-            for (int j = 1; j <= n; j++) {
-                // 간선이 존재하지 않는 경우에는 넘어갑니다.
-                if (graph[minIndex][j] == 0)
-                    continue;
-
-                dist[j] = Math.min(dist[j], dist[minIndex] + graph[minIndex][j]);
-            }
         }
 
-        // 시작점(5번 정점)으로부터 각 지점까지의 최단거리 값을 출력합니다.
-        for (int i = 1; i <= n; i++)
+        for (int i = 1; i <= n ; i++) {
             System.out.print(dist[i] + " ");
+        }
     }
 }
-
