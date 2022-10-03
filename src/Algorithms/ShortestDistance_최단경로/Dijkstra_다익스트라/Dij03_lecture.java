@@ -1,6 +1,6 @@
 // 다익스트라 기본 구현
 // 강의 그대로 구현해보기
-
+// 반복문으로 해결
 
 package Algorithms.ShortestDistance_최단경로.Dijkstra_다익스트라;
 
@@ -49,7 +49,7 @@ public class Dij03_lecture {
                     minIdx = j;
                 }
             }
-            // 최소 거리를 가지는 정점을 뽑아냄
+            // 최소 거리를 가지는 정점을 뽑아
             visited[minIdx] = true;
             // 선택된 최소 값을 지니는 정점 방문 기록
 
