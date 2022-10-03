@@ -6,6 +6,8 @@
 
 package Algorithms.Dijkstra_다익스트라;
 
+import org.w3c.dom.Node;
+
 import java.util.ArrayList;
 import java.util.PriorityQueue;
 import java.util.Scanner;
@@ -21,73 +23,79 @@ public class Dij01 {
 
     public static int[] dist = new int[MAX_N + 1];
     public static Node[] nodes = new Node[MAX_M + 1];
-    static class Node{
-        int index,dist;
 
-        Node(int y, int z){
-            this.index = y;
-            this.dist = z;
-        }
-    }
-    // y 정점으로의 방향으로 z의 가중치를 가진다.
-    static class Element implements Comparable<Element>{
-        int dist, index;
-        public Element(int dist, int index){
-            this.dist = dist;
+    static class Element implements Comparable<Element>{ // 우선순위 큐에 넣을 인스턴스의 클래스
+
+        int index;
+        int dist;
+
+        Element(int index, int dist){
             this.index = index;
+            this.dist = dist;
         }
-
-        public int compareTo(Element e){
-            return this.dist - e.dist;
-        } // 가까운 거리가 가장 먼저 위치
+        @Override
+        public int compareTo(Element o) {
+            return this.dist - o.dist;
+        } // 거리 기준 오름차순으로 우선순위 큐에 저장
     }
+    static class Node{
+        int index; // 해당 정점의 인덱스
+        int dist; // 해당 정점까지의 거리
+
+        Node(int index, int dist){
+            this.index = index;
+            this.dist = dist;
+        }
+    }
+
     public static void main(String[] args) {
+
         Scanner sc = new Scanner(System.in);
+        System.out.print("정점의 개수: ");
         n = sc.nextInt();
+
+        System.out.print("간선의 개수: ");
         m = sc.nextInt();
 
-        for (int i = 1; i <= m ; i++) {
+        for (int i = 1; i <= n ; i++) {
             graph[i] = new ArrayList<>();
         }
 
         for (int i = 1; i <= m ; i++) {
-            int x = sc.nextInt();
-            int y = sc.nextInt();
-            int z = sc.nextInt();
+            int x = sc.nextInt(); // 출발 정점
+            int y = sc.nextInt(); // 도착 정점
+            int z = sc.nextInt(); // 가중치
 
             graph[x].add(new Node(y,z));
-        } // x - > y 로 z 의 가중치
+        }
 
-        for(int i = 1; i <= n; i ++)
+        for (int i = 1; i <= n ; i++) {
             dist[i] = (int)1e9;
+        }
 
-        dist[5] = 0;
-        // 시작위치에는 dist값을 0으로 설정
+        dist[n] = 0; // n정점 이 시작 위치
 
-        pq.add(new Element(0,5));
-        // 시작위치를 우선순위 큐에 삽입
+        pq.add(new Element(n,dist[n])); // 시작 정점을 우선순위 큐에 삽입
 
         while(!pq.isEmpty()){
 
+            int minIndex = pq.peek().index;
             int minDist = pq.peek().dist;
-            int minInd = pq.peek().index;
+            pq.poll(); // 해당 정점 삭제
 
-            pq.poll(); // 가장 거리가 가까운 정점 삭제
-
-            if(minDist != dist[minInd])
+            if(minDist != dist[minIndex])
                 continue;
 
-            for (int j = 0; j < graph[minInd].size() ; j++) {
-                int targetIndex = graph[minInd].get(j).index;
-                int targetDist = graph[minInd].get(j).dist;
-                // 최솟값에 해당하는 정점에 연결된 간선들을 보며
-                // 최단거리 값을 갱신
+            for (int i = 0; i < graph[minIndex].size() ; i++) { // 현재 최소 거리를 갖는 정점과 연결되어 있는 모든 정점확인
 
-                int newDist = dist[minInd] + targetDist;
-                if(dist[targetIndex] > newDist){
-                    dist[targetIndex] = newDist; // 거리 갱신
-                    pq.add(new Element(newDist,targetIndex));
-                }
+                int targetIndex = graph[minIndex].get(i).index;
+                int targetDist = graph[minIndex].get(i).dist;
+
+                int newDist = targetDist + dist[minIndex];
+                if(newDist < dist[targetIndex]){
+                    dist[targetIndex] = newDist;
+                    pq.add(new Element(targetIndex,newDist));
+                } // dist 값 업데이트
             }
         }
 
