@@ -1,68 +1,65 @@
 // 날짜 : 2022/10/03
-// 문제 : 가장 오래 걸리는 학생
+// 문제 : 각 정점까지의 최단 경로
 // 문제 설명 :
-// N개의 서로 장소가 있습니다. 1번부터 N - 1번 장소에는 학생이 한 명씩 살고 있고, N번 장소는 학교입니다.
-// 두 개의 장소를 연결하는 간선은 없거나, 있다면 최대 1개만 있으며 주어지는 모든 간선은 방향성을 갖습니다.
-// 간선마다 길이가 주어지며, 각 학생은 등교시 최단거리로 학교로 이동한다고 합니다. 모든 학생은 거리 1을 이동하는 데 1초의 시간이 걸린다 했을 때,
-// 학교에 등교하는 데 가장 오래 걸리는 학생의 소요 시간을 구하는 프로그램을 작성해보세요.
+// n개의 정점이 존재하고 m개의 간선의 양 끝 정점과 가중치가 주어질 때, k번 정점에서 다른 모든 정점으로 가는 최단 경로를 구하는 프로그램을 작성해보세요.
+// 이때 주어지는 정점과 간선들로 구성되는 그래프는 '양방향 그래프'라고 가정합니다.
 
 // 입력 형식 :
-// 첫 번째 줄에는 N(장소의 개수)과 M(간선의 개수)이 공백을 사이에 두고 차례대로 주어집니다.
-// 두 번째 줄에는 간선을 이루고 있는 두 장소의 번호 i, j와 간선의 길이 d가 각각 공백을 사이에 두고 차례대로 주어집니다.
-// 이는 장소 i에서 장소 j로 가는 데 길이가 d 임을 뜻합니다.
-// 모든 학생이 등교하는 것이 가능함을 가정해도 좋습니다.
-// 1 ≤ N ≤ 100,000
-// 1 ≤ M ≤ 100,000
-// 1 ≤ 간선의 길이 ≤ 1,000
+// 첫 번째 줄에 정점의 개수 n과 간선의 개수 m이 공백을 두고 주어집니다.
+// 두 번째 줄에 k가 주어집니다.
+// 세 번째 줄부터 m개의 줄에 걸쳐, 각 간선의 양 끝 정점의 번호와 해당 간선에 주어진 가중치가 공백을 두고 주어집니다.
+// 중복되는 간선은 주어지지 않는다고 가정해도 좋습니다.
+// 1 ≤ n ≤ 20,000
+// 1 ≤ m ≤ 300,000
+// 1 ≤ k ≤ n
+// 1 ≤ 간선의 가중치 ≤ 10
 
-// 입력 예시 01 :
+// 입력 예시01 :
 // 5 6
-// 2 1 1
-// 1 5 2
-// 4 5 100
-// 4 2 9
-// 3 2 3
-// 4 3 5
+// 1
+// 5 1 1
+// 1 2 2
+// 1 3 3
+// 2 3 4
+// 2 4 5
+// 3 4 6
 
-// 출력 예시 01 :
-// 11
-
-// 아이디어 :
-// 각 지점에서 n정점까지의 거리를 매번 구하기 보다는
-// 주어지는 간선의 정보를 반대로 설정하여 n번 정점에서 각 정점까지의 거리를 구한다. O(ElogV)
+// 출력 예시01 :
+// 0
+// 2
+// 3
+// 7
+// 1
 
 package Algorithms.Dijkstra_다익스트라.다익스트라문제풀이;
 
-
+import java.net.Proxy;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.PriorityQueue;
 import java.util.Scanner;
+import java.util.zip.Deflater;
 
 public class Dij02 {
-    public static final int MAX_N = 100000;
-    public static final int MAX_M = 100000;
+    public static final int MAX_N = 20000;
+    public static final int MAX_M = 300000;
+    public static int n,m,k;
 
-    public static int n, m;
-    public static ArrayList<Edge>[] graph = new ArrayList[MAX_N + 1]; // 각 정점에 연결된 정점들을 구현하기 위한 인접리스트
-    public static PriorityQueue<Element> pq = new PriorityQueue<>(); // 최소거리 우선순위 큐
-    public static int[] dist = new int[MAX_N + 1]; // 각 정점까지의 거리를 원소로 하는 1차원 배열
+    public static ArrayList<Edge>[] graph = new ArrayList[MAX_N + 1];
+    public static PriorityQueue<Element> pq = new PriorityQueue<>();
+    public static int[] dist = new int[MAX_N + 1];
 
-    static class Edge {
-        int index;
-        int dist;
-
-        Edge(int index, int dist) {
+    static class Edge{
+        int index, dist;
+        Edge(int index, int dist){
             this.index = index;
             this.dist = dist;
         }
     }
 
-    static class Element implements Comparable<Element> {
-        int index;
-        int dist;
+    static class Element implements Comparable<Element>{
 
-        Element(int index, int dist) {
+        int index, dist;
+        Element(int index, int dist){
             this.index = index;
             this.dist = dist;
         }
@@ -72,55 +69,62 @@ public class Dij02 {
             return this.dist - o.dist;
         }
     }
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        n = sc.nextInt();
-        m = sc.nextInt();
+        n = sc.nextInt(); // 정점의 갯수
+        m = sc.nextInt(); // 간선의 갯수
+        k = sc.nextInt(); // 시작하는 정점
 
-        for (int i = 1; i <= n; i++) {
+        for (int i = 1; i <= n ; i++) {
             graph[i] = new ArrayList<>();
         }
 
-        while (m-- > 0) {
+        while(m -- > 0){
             int x = sc.nextInt();
             int y = sc.nextInt();
             int z = sc.nextInt();
 
-            graph[y].add(new Edge(x, z)); // y -> x with z
-        } // 인접리스트 원소 입력
-
-        for (int i = 1; i <= n; i++) {
-            dist[i] = (int) 1e9;
+            graph[x].add(new Edge(y,z));
+            graph[y].add(new Edge(x,z));
         }
 
-        dist[n] = 0; // 출발 지점(학교)
-        pq.add(new Element(n, 0));
+        for (int i = 1; i <= n ; i++) {
+            dist[i] = (int)1e9;
+        }
 
-        while (!pq.isEmpty()) {
+        dist[k] = 0; // 시작 정점은 0
+        pq.add(new Element(k,0));
 
-            int minIndex = pq.peek().index;
+
+        while(!pq.isEmpty()){
+
             int minDist = pq.peek().dist;
-            pq.poll(); // dist값이 가장 작은 정점 삭제
+            int minIndex = pq.peek().index;
+            pq.poll();
 
-//            if(minDist != dist[minIndex])
-//                continue;
+            if(minDist != dist[minIndex])
+                continue;
 
-            for (int i = 0; i < graph[minIndex].size(); i++) {
-
-                int targetIndex = graph[minIndex].get(i).index; // minIndex 정점으로부터 갈 수 있는 정점의 인덱스
-                int targetDist = graph[minIndex].get(i).dist; // // minIndex 정점으로부터 갈 수 있는 정점까지의 거리
+            for (int i = 0; i < graph[minIndex].size() ; i++) {
+                int targetIndex = graph[minIndex].get(i).index;
+                int targetDist = graph[minIndex].get(i).dist;
 
                 int newDist = dist[minIndex] + targetDist;
-                if (dist[targetIndex] > newDist) {
+                if(dist[targetIndex] > newDist){
                     dist[targetIndex] = newDist;
                     pq.add(new Element(targetIndex, newDist));
                 }
             }
         }
 
-//        for (int i = 1; i <= n ; i++) {
-//            System.out.print(dist[i] + " ");
-        System.out.println(Arrays.stream(dist).max().getAsInt());
+        for(int i = 1;i <= n; i ++){
+
+            if(dist[i] == (int)1e9){
+                System.out.println(-1);
+            }else{
+                System.out.println(dist[i]);
+            }
+//            System.out.println(dist[i]);
+        }
     }
 }
