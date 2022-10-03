@@ -49,7 +49,7 @@
 > - [Dynamic Programming] : 다이나믹 프로그래밍 <br>
 >  <br> 
 > 
-> - [Graph Algorithms] : Dijkstra, Floyd Warhshall, Kruskal, Prim, etc
+> - [Shortest Distance] : Dijkstra, Floyd Warhshall, Kruskal, Prim, etc
 
 
 

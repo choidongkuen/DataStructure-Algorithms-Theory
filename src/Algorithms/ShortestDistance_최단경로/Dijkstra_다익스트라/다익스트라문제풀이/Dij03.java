@@ -31,7 +31,7 @@
 // 각 지점에서 n정점까지의 거리를 매번 구하기 보다는
 // 주어지는 간선의 정보를 반대로 설정하여 n번 정점에서 각 정점까지의 거리를 구한다. O(ElogV)
 
-package Algorithms.Dijkstra_다익스트라.다익스트라문제풀이;
+package Algorithms.ShortestDistance_최단경로.Dijkstra_다익스트라.다익스트라문제풀이;
 
 
 import java.util.ArrayList;

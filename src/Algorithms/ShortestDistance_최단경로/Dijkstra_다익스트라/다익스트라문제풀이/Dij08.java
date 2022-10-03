@@ -28,7 +28,7 @@
 // 출력 얘시01 :
 // 3
 
-package Algorithms.Dijkstra_다익스트라.다익스트라문제풀이;
+package Algorithms.ShortestDistance_최단경로.Dijkstra_다익스트라.다익스트라문제풀이;
 
 import java.util.Scanner;
 

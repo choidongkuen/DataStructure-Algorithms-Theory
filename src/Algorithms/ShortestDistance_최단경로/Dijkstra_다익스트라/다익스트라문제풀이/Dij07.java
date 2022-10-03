@@ -31,10 +31,8 @@
 // 3
 // 1 4 3 5
 
-package Algorithms.Dijkstra_다익스트라.다익스트라문제풀이;
+package Algorithms.ShortestDistance_최단경로.Dijkstra_다익스트라.다익스트라문제풀이;
 
-import java.io.PrintStream;
-import java.util.PriorityQueue;
 import java.util.Scanner;
 
 public class Dij07 {

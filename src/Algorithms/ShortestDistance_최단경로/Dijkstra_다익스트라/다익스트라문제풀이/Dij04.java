@@ -3,7 +3,7 @@
 // 특정 시작점에서 다른 모든 정점으로 가는 최단거리를 구하는 알고리즘 = Dijkstra 알고리즘
 // 그렇다면 특정 시작점에서 특정 정점으록 가는 '경로'를 구해보자!
 
-package Algorithms.Dijkstra_다익스트라.다익스트라문제풀이;
+package Algorithms.ShortestDistance_최단경로.Dijkstra_다익스트라.다익스트라문제풀이;
 import java.util.ArrayList;
 import java.util.PriorityQueue;
 import java.util.Scanner;

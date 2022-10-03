@@ -5,7 +5,7 @@
 // Dij05에서 최단거리의 경로를 구해보았다.
 // 그렇다면 이런 최단거리 경로가 2개 이상일 때, 정점의 번호가 가장 작은 경우를 선택하여 출력해보자(사전순)
 
-package Algorithms.Dijkstra_다익스트라.다익스트라문제풀이;
+package Algorithms.ShortestDistance_최단경로.Dijkstra_다익스트라.다익스트라문제풀이;
 
 import java.util.ArrayList;
 import java.util.PriorityQueue;

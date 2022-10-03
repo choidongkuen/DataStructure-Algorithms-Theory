@@ -1,7 +1,7 @@
 // 2번 방식으로 다익스트라를 구현해보자.
 // 간선의 정보를 Edge클래스의 인스턴스로 설정
 
-package Algorithms.Dijkstra_다익스트라;
+package Algorithms.ShortestDistance_최단경로.Dijkstra_다익스트라;
 
 class Edge{
     int x,y,z;

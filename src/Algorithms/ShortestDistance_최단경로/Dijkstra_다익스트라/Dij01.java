@@ -4,9 +4,7 @@
 
 // 1번 방식으로 구현해보기
 
-package Algorithms.Dijkstra_다익스트라;
-
-import org.w3c.dom.Node;
+package Algorithms.ShortestDistance_최단경로.Dijkstra_다익스트라;
 
 import java.util.ArrayList;
 import java.util.PriorityQueue;
