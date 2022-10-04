@@ -2,6 +2,9 @@
 // 강의 그대로 구현해보기
 // 우선순위 큐로 해결
 
+// 시작점 넣고 각 노드의 to는 해당 정점의 값을 의미
+// 특정 정점과 연결된 정점 중에 dist 값이 업데이트 된 정점이 있다면 우선순위 큐에 업데이트 된 정점의 번호와, 바뀐 값을 인스턴스화 해서 add
+
 package Algorithms.ShortestDistance_최단경로.Dijkstra_다익스트라;
 
 import java.util.ArrayList;

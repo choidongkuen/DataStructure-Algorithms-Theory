@@ -58,26 +58,25 @@ public class Dij09 {
         for (int i = 1; i <= n ; i++) {
 
             int minIndex = -1;
-            for (int j = 1; j <= n ; j++) {
-                if(visited[j])
+            for (int j = 1; j <= n; j++) {
+                if (visited[j])
                     continue;
 
-                if(minIndex == -1 || dist[minIndex] > dist[j])
+                if (minIndex == -1 || dist[minIndex] > dist[j])
                     minIndex = j;
 
 
                 visited[minIndex] = true;
             }
 
-            for (int j = 1; j <= n ; j++) {
-                if(graph[minIndex][j] == 0)
+            for (int j = 1; j <= n; j++) {
+                if (graph[minIndex][j] == 0)
                     continue;
 
                 dist[j] = Math.min(dist[j], dist[minIndex] + graph[minIndex][j]);
             }
         }
     }
-
     public static void initialize(){
         // 각종 필요한 리소스를 초기화하는 메소드
 
@@ -103,32 +102,38 @@ public class Dij09 {
             int[] stop = new int[n];
 
             for (int j = 0; j < n ; j++) {
-                stop[i] = sc.nextInt();
+                stop[j] = sc.nextInt();
             }
-            bus.add(new Bus(fare,n,stop));
+            bus.add(new Bus(fare,n,stop)); // 인스턴스 배열에 저장
         }
 
+        boolean isPossible = false;
         for (int i = 0; i < n ; i++) {
             initialize(); // 초기화 하고
 
-            int fare = bus.get(i).fare;
-            int n = bus.get(i).n;
-            int[] stop = new int[n];
-            stop = bus.get(i).stop;
-            // 미리 저장해 놓은 배열리스트부터 정보 가져오고
+            Bus inst = bus.get(i);
+            int[] stop = inst.stop;
+            dist[stop[0]] = 0; // 시작점 0으로 설정
 
-            for (int j = 0; j < n - 1 ; j++) {
-                graph[j][j + 1] = 1; // 인접행렬 만들고
-                dist[stop[0]] = 0; // 시작 지점 0으로 설정
-                dijkstra(); // 다익스트라 메소드 실행
+            for (int j = 1; j <= inst.n - 1 ; j++) {
+                int start = stop[i];
+                int end = stop[i + 1];
+                graph[start][end] = 1;
+            }
+            dijkstra();
 
-                if(dist[A] != (int)1e9 && dist[B] != (int)1e9){
-                    if(dist[B] - dist[A] < minCost){
-                        minCost = dist[B] - dist[A];
-//                        minTime =
-                    }
-                }
+            if(dist[A] != (int)1e9 && dist[B] != (int)1e9){
+                minCost = Math.min(minCost,inst.fare);
+                minTime = Math.min(minTime,dist[B] - dist[A]);
+                isPossible = true;
             }
         }
+
+        if(!isPossible){
+            minCost = -1;
+            minTime = -1;
+        }
+
+        System.out.println(minCost + " " + minTime);
     }
 }
