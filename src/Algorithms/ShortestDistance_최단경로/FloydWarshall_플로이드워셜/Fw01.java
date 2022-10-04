@@ -23,7 +23,7 @@ public class Fw01 {
 
         for (int i = 0; i < e ; i++){
             dist[data[i][0]][data[i][1]] = data[i][2];
-        }
+        } // 초기화 1단계
 
         for (int k = 1; k <= v ; k++) {
             // i -> j (k 를 거쳐서 가는 경우가 있을 때 업데이트)
