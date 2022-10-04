@@ -72,8 +72,8 @@ public class Dij03_lecture {
 
     public static void main(String[] args) {
 
-        int[][] data = {{1,2,2},{1,3,3},{2,3,4},{2,4,5},{3,4,6},{5,1,1}};
-        dijkstra(5,data,1);
+        int[][] data = {{2,1,3},{4,2,-2},{5,2,1},{5,4,2}};
+        dijkstra(5,data,5);
         // v : 정점의 갯수
         // start : 시작 정점 번호
     }
