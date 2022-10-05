@@ -28,11 +28,7 @@ public class Mst01 {
     public static void union(int a, int b){
         int aP = find(a);
         int bP = find(b);
-
-        if(aP != bP){
-            findUnion[aP] = bP;
-        }
-
+        findUnion[aP] = bP;
     }
     public static int kruskal(int[][] data,int v, int e){
         int weightSum = 0; // 가중치의 합

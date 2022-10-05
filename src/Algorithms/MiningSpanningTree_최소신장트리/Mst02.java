@@ -1,4 +1,4 @@
-// trim 으로 구현해보기
+// prim 으로 구현해보기
 
 package Algorithms.MiningSpanningTree_최소신장트리;
 
