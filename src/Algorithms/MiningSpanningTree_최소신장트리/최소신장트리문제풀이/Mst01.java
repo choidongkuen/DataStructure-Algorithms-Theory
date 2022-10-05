@@ -17,6 +17,14 @@
 // data = {{11,-15,-15},{14,-5,-15},{-1,-1,-5},{10,-4,-1},{19,-4,19}}
 // 출력 : 4
 
+// 아이디어 :
+// 행성간 터널 연결 비용은 세 좌표에 차이에서의 최소값으로,
+// 행성이 v개 있을시, v - 1개의 간선은 x좌표기준, y좌표기준, z좌표기준 중에 어떤것으로 잡힐지 모름
+// 간선정보가 주어지지 않았음으로, 간선정보를 만들어야 한다.
+// x좌표 기준으로 가는 경우, y좌표 기준으로 가는 경우, z좌표 기준으로 가는 경우(간선들)을 전부 edge 배열리스트에 넣어주고,
+// 가중치 기준으로 정렬한다.
+// 그 후, kruskal 알고리즘 !
+
 package Algorithms.MiningSpanningTree_최소신장트리.최소신장트리문제풀이;
 
 import java.util.ArrayList;
@@ -127,6 +135,7 @@ public class Mst01 {
         }
 
         Collections.sort(edge);
+
         return kruskal(v);
     }
     public static void main(String[] args) {
