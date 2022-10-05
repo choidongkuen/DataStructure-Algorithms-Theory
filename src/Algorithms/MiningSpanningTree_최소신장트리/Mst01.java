@@ -6,7 +6,7 @@
 // trim
 
 
-// kruskal 구현해보
+// kruskal 구현해보기
 
 package Algorithms.MiningSpanningTree_최소신장트리;
 
@@ -28,11 +28,12 @@ public class Mst01 {
     public static void union(int a, int b){
         int aP = find(a);
         int bP = find(b);
+
         if(aP != bP){
             findUnion[aP] = bP;
         }
-    }
 
+    }
     public static int kruskal(int[][] data,int v, int e){
         int weightSum = 0; // 가중치의 합
 
