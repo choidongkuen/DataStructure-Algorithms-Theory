@@ -19,10 +19,7 @@
 
 package Algorithms.MiningSpanningTree_최소신장트리.최소신장트리문제풀이;
 
-import java.sql.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
 import java.util.Collections;
 
 public class Mst01 {
@@ -62,6 +59,39 @@ public class Mst01 {
             return this.weight - o.weight;
         } // 가중치 기준 오름차순으로 정렬
     }
+    public static int find(int a){
+
+        if(a == uf[a])
+            return a;
+        int rootNode = find(uf[a]);
+        uf[a] = rootNode;
+        return rootNode;
+    }
+
+    public static void union(int a, int b){
+        int aP = find(a);
+        int bP = find(b);
+        uf[aP] = bP;
+    }
+
+    public static int kruskal(int v){
+        uf = new int[v + 1];
+        int weightSum = 0;
+
+
+        for (int i = 1; i <= v ; i++) {
+            uf[i] = i;
+        }
+
+        for (int i = 0; i < edge.size() ; i++) {
+            Edge cur = edge.get(i);
+            if (find(cur.to) != find(cur.from)) {
+                weightSum += cur.weight;
+                union(cur.to,cur.from);
+            }
+        }
+        return weightSum;
+    }
 
     public static int solution(int[][] graph){
 
@@ -79,28 +109,25 @@ public class Mst01 {
 
         for (int i = 0; i < v - 1 ; i++) {
             int weight = Math.abs(space.get(i).x - space.get(i + 1).x);
-            edge.add(new Edge(space.get(i).idx,space.get(i).idx,weight));
+            edge.add(new Edge(space.get(i).idx,space.get(i + 1).idx,weight));
         }
         // y축 기준 간선 추가
         Collections.sort(space, (s1,s2) -> s1.y - s2.y);
 
         for (int i = 0; i < v - 1 ; i++) {
             int weight = Math.abs(space.get(i).y - space.get(i + 1).y);
-            edge.add(new Edge(space.get(i).idx,space.get(i).idx,weight));
+            edge.add(new Edge(space.get(i).idx,space.get(i + 1).idx,weight));
         }
         // z축 기준 간선 추가
+
+        Collections.sort(space, (s1,s2) -> s1.z - s2.z);
         for (int i = 0; i < v - 1 ; i++) {
             int weight = Math.abs(space.get(i).z - space.get(i + 1).z);
-            edge.add(new Edge(space.get(i).idx,space.get(i).idx,weight));
+            edge.add(new Edge(space.get(i).idx,space.get(i + 1).idx,weight));
         }
 
         Collections.sort(edge);
-
-        //kruskal 알고리즘
-
-        return 0;
-
-//        return weightSum;
+        return kruskal(v);
     }
     public static void main(String[] args) {
 
