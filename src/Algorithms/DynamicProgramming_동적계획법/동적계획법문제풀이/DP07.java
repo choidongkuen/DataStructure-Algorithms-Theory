@@ -8,19 +8,34 @@
 
 package Algorithms.DynamicProgramming_동적계획법.동적계획법문제풀이;
 
+import java.util.Arrays;
+
 public class DP07 {
+    public static int[] dp;
 
     public static int solution(int n){
+        dp = new int[n + 1];
+        dp[1] = 0;
 
-        return 1;
+        for (int i = 2; i <= n ; i++) {
+            dp[i] = dp[i - 1] + 1;
+            // 모든 수는 1을 뺄 수 있음
 
+            if(i % 2 == 0)
+                dp[i] = Math.min(dp[i], dp[i / 2] + 1);
+            if(i % 3 == 0)
+                dp[i] = Math.min(dp[i], dp[i / 3] + 1);
+        }
+
+        return dp[n];
     }
     public static void main(String[] args) {
 
 
-        System.out.println(solution(2)); // 1
-        System.out.println(solution(4)); // 2
-        System.out.println(solution(9)); // 2
+//        System.out.println(solution(2)); // 1
+//        System.out.println(solution(4)); // 2
+//        System.out.println(solution(9)); // 2
         System.out.println(solution(10)); // 3
+        System.out.println(Arrays.toString(dp));
     }
 }
