@@ -65,7 +65,7 @@
 >  - Bellman Ford
 >  - Floyd Warhshall
 > <br>
-<br>
+> <br>
 >  
 > - [Minumum Spanning Tree] : 최소 신장 트리 
 >   - Kruskal
