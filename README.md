@@ -61,14 +61,14 @@
 >  <br> 
 > 
 > - [Shortest Distance] : 최단 경로 찾기 <br>
->  - Dijkstra
->  - Bellman Ford
->  - Floyd Warhshall
-> <br>
-> <br>
+>    - Dijkstra
+>    - Bellman Ford
+>    - Floyd Warhshall
+>   <br>
+>   <br>
 >  
 > - [Minumum Spanning Tree] : 최소 신장 트리 
->   - Kruskal
->   - Trim
+>    - Kruskal
+>    - Trim
 
 
