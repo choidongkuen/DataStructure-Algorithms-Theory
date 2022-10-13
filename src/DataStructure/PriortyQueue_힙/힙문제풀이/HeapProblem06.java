@@ -30,7 +30,7 @@
 package DataStructure.PriortyQueue_힙.힙문제풀이;
 import java.util.PriorityQueue;
 import java.util.Scanner;
-
+/*
 class Pair implements Comparable<Pair> {
     int x, y;
 
@@ -76,5 +76,57 @@ public class HeapProblem06 {
 
         Pair closeP = pq.poll();
         System.out.println(closeP.x + " " + closeP.y);
+    }
+}
+*/
+public class HeapProblem06{
+
+    public static final int MAX = 100000;
+    public static int n,m;
+    public static PriorityQueue<Point> pq = new PriorityQueue<>();
+    // 객체를 담는 우선순위 큐 -> 원점까지의 거리가 가까운 것 우선순위
+    static class Point implements Comparable<Point>{
+
+        int x,y;
+
+        Point(int x, int y){
+            this.x = x;
+            this.y = y;
+        }
+
+        @Override
+        public int compareTo(Point p) {
+
+            if(Math.abs(this.x) + Math.abs(this.y) != Math.abs(p.x) + Math.abs(p.y)) // 원점까지의 거리가 다른 경우
+                return (this.x + this.y) - (p.x + p.y);
+            else{
+                if(this.x != p.x) // 원점까지의 거리가 같은 경우
+                    return this.x - p.x;
+                else
+                    return this.y - p.y;
+            }
+        }
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        n = sc.nextInt();
+        m = sc.nextInt();
+        for (int i = 0; i < m ; i++) {
+            int x = sc.nextInt();
+            int y = sc.nextInt();
+
+            pq.add(new Point(x,y));
+        }
+
+        while(m -- > 0){
+            Point p = pq.poll();
+            pq.add(new Point(p.x + 2, p.y + 2));
+        }
+
+
+        Point result = pq.peek();
+        System.out.println(result.x + " " + result.y);
+
     }
 }
